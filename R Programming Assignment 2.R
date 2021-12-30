@@ -1,4 +1,8 @@
+#library MASS allows for the calculation of non-square matrices 
 library(MASS)
+
+#this portion of the function creates the cache matrix#
+
 makeCacheMatrix <- function(x=matrix()){
 	inv <- NULL
 	set <- function(y){
@@ -11,6 +15,7 @@ makeCacheMatrix <- function(x=matrix()){
 	list(set=set,get=get,setInverse=setInverse,getInverse=getInverse)
 }
 
+#this portion is used to get the cache data
 cacheSolve <- function(x,...){
 	inv <- x$getInverse()
 	if(!is.null(inv)){
